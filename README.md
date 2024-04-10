@@ -10,7 +10,6 @@ Highlevel HTTP level APIS 대신에 소켓 API를 사용하여 웹서버를 구�
 
 ## Requirements
 
-rules
 ```
 
 1. You need to open 80 listening port
