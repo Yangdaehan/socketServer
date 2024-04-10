@@ -2,11 +2,13 @@
 
 소켓 API를 활용하여 나만의 간단한 웹서버 만들기
 
+
 ## Introduction
 
 Highlevel HTTP level APIS 대신에 소켓 API를 사용하여 웹서버를 구현합니다. 
 
-### Requirements
+
+## Requirements
 
 rules
 ```
@@ -31,13 +33,13 @@ rules
 
 ```
 
-### 구현 내용
+## Implementation details
 
 * Http GET 메소드를 읽고 처리할 수 있습니다.
 * 특정 시점에 동시에 발생하는 트래픽을 처리합니다.
 
 
-### Language & Build Environment
+## Language & Build Environment
 
 * Java
 * IntelliJ
