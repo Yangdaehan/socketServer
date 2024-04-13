@@ -1,4 +1,4 @@
-package org.example.sibal;
+package org.example.socketServer;
 
 import java.io.IOException;
 import java.net.ServerSocket;

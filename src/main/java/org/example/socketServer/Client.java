@@ -1,4 +1,4 @@
-package org.example.sibal;
+package org.example.socketServer;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -33,7 +33,6 @@ public class Client implements Runnable {
             String headerLine;
             while ((headerLine = in.readLine()) != null && !headerLine.isEmpty()) {
                 System.out.println("헤더: " + headerLine);
-                // 필요한 경우 추가 헤더를 파싱할 수 있습니다
             }
 
             // GET 요청 확인
@@ -54,8 +53,10 @@ public class Client implements Runnable {
                 out.println("HTTP/1.1 405 Method Not Allowed");
             }
 
-            Thread.sleep(10000);
-            System.out.println("test!!!!! yangdaehan bingsin");
+            // 멀티 스레딩이 구현되었는지 확인
+            Thread.sleep(10000); // 멀티스레딩이 구현되지 않았다면 각 창이 열릴 때 10초씩 텀이 존재하게 한다
+            System.out.println("test!!! 멀티스레딩이 구현되지 않음");
+
 
             // 스트림과 소켓 닫기
             out.close();
