@@ -6,11 +6,11 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class Client implements Runnable {
+public class RequestHandler implements Runnable {
 
     private final Socket clientSocket;
 
-    public Client(Socket clientSocket) {
+    public RequestHandler(Socket clientSocket) {
         this.clientSocket = clientSocket;
     }
 
@@ -54,8 +54,8 @@ public class Client implements Runnable {
             }
 
             // 멀티 스레딩이 구현되었는지 확인
-            Thread.sleep(10000); // 멀티스레딩이 구현되지 않았다면 각 창이 열릴 때 10초씩 텀이 존재하게 한다
-            System.out.println("test!!! 멀티스레딩이 구현되지 않음");
+            Thread.sleep(10000);
+            System.out.println("test!!!"); // 멀티스레딩이 안된다면 여러 창을 띄었을 때 10초 씩 텀을 두고 test가 print 되어야 함
 
 
             // 스트림과 소켓 닫기
