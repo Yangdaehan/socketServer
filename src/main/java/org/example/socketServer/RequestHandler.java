@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.text.SimpleDateFormat;
 
 public class RequestHandler implements Runnable {
 
@@ -54,8 +55,10 @@ public class RequestHandler implements Runnable {
             }
 
             // 멀티 스레딩이 구현되었는지 확인
-            Thread.sleep(10000);
-            System.out.println("test!!!"); // 멀티스레딩이 안된다면 여러 창을 띄었을 때 10초 씩 텀을 두고 test가 print 되어야 함
+            //Thread.sleep(10000);
+            long nano = System.currentTimeMillis();
+            // 멀티스레딩이 구현되지 않았다면 여러 창을 띄었을 때 10초 씩 텀을 두고 접속시간이 print
+            System.out.println("서버 접속 시간 : "+new SimpleDateFormat("HH:mm:ss.SSS").format(nano));
 
 
             // 스트림과 소켓 닫기
@@ -66,8 +69,8 @@ public class RequestHandler implements Runnable {
 
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (InterruptedException e) {
+        } /*catch (InterruptedException e) {
             throw new RuntimeException(e);
-        }
+        }*/
     }
 }
