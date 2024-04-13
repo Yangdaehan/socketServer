@@ -18,11 +18,12 @@ public class WebServer {
                 System.out.println("클라이언트 연결됨.");
 
                 // 클라이언트를 처리할 새로운 스레드 생성
-                Thread clientThread = new Thread(new Client(clientSocket));
+                Thread clientThread = new Thread(new RequestHandler(clientSocket));
                 clientThread.start();
 
             }
         } catch (IOException e) {
+            // IOException 발생 시 오류 메시지 출력
             e.printStackTrace();
         }
     }
